@@ -9,11 +9,11 @@
 
   <script>
     // start with strings, numbers and booleans
-
+    
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
-    // and we want to make a copy of it.
+    // and we want to make a copy of it. 
 
     // You might think we can just do something like this:
 
@@ -46,10 +46,33 @@
     // and think we make a copy:
 
     // how do we take a copy instead?
+    const cap2 = {...person}
+    console.log(cap2)
+
+    const captain = Object.assign({}, person)
+    console.log(captain)
 
     // We will hopefully soon see the object ...spread
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+
+    const wes = {
+      name: 'Wes', 
+      age: 100, 
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.dev',
+      }
+    }
+
+    console.clear();
+    console.log(wes);
+const newWes = {...wes}
+    console.log(newWes)
+    newWes.social.twitter = '@bos'
+
+    console.log(wes);
 
   </script>
 

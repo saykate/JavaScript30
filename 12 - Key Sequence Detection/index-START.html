@@ -7,6 +7,21 @@
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
   <body>
-    <script></script>
+    <script>
+      const pressed = [];
+      const secretCode = 'wesbos'; //with this secretCode, the longest array we'll be looking for is 6
+
+      window.addEventListener('keyup', (e) => {
+        console.log(e.key);
+        pressed.push(e.key);
+        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);  //-secretCode.length - 1 = whatever our secretCode, you say - to start at the end, and the minus 1 because the count starts at zero
+        
+        if(pressed.join('').includes(secretCode)) {
+          console.log('DING DING!')
+          cornify_add();
+        }
+        console.log(pressed);
+      })
+    </script>
   </body>
 </html>
